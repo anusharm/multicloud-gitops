@@ -11,7 +11,7 @@
     vault_pod: "vault-0"
     vault_path: "secret/hub"
     debug: False
-
+    ansible_python_interpreter: /usr/bin/python3
   tasks:
   - name: Check for existence of "{{ values_secret }}"
     ansible.builtin.stat:
