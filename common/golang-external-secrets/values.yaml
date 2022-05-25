@@ -3,5 +3,5 @@ mountPath: "hub"
 mountRole: "hub-role"
 
 global:
-  #hubClusterDomain: apps.ocp410.datamulticloud.com
-  hubClusterDomain: apps.cluster-2t2fp.2t2fp.sandbox1398.opentlc.com
+  hubClusterDomain: apps.ocp410.datamulticloud.com
+  #hubClusterDomain: apps.cluster-7lgc4.7lgc4.sandbox1765.opentlc.com
