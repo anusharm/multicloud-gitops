@@ -13,6 +13,11 @@ clusterGroup:
     namespace: open-cluster-management
     channel: release-2.4
     csv: advanced-cluster-management.v2.4.1
+  
+  - name: odf-operator
+    namespace: openshift-storage
+    channel: stable-4.10
+    csv: odf-operator.v4.10.1
 
   projects:
   - hub
