@@ -20,6 +20,7 @@ clusterGroup:
   - hub
   - config-demo
   - golang-external-secrets
+  - lso
 
   applications:
   - name: acm
@@ -67,6 +68,11 @@ clusterGroup:
     namespace: config-demo
     project: config-demo
     path: charts/all/config-demo
+  
+  - name: lso
+    namespace: openshift-local-storage
+    project: lso
+    path: charts/all/lso
 
   managedClusterGroups:
   - name: region-one
