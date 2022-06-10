@@ -8,17 +8,13 @@ clusterGroup:
   - golang-external-secrets
   - config-demo
   - openshift-storage
+  - openshift-local-storage
 
   subscriptions:
   - name: advanced-cluster-management
     namespace: open-cluster-management
     channel: release-2.4
     csv: advanced-cluster-management.v2.4.1
-  
-  - name: odf-operator
-    namespace: openshift-storage
-    channel: stable-4.10
-    csv: odf-operator.v4.10.1
 
   projects:
   - hub
@@ -71,6 +67,11 @@ clusterGroup:
     namespace: config-demo
     project: config-demo
     path: charts/all/config-demo
+  
+  - name: lso
+    namespace: openshift-local-storage
+    project: openshift-local-storage
+    path: charts/all/lso
 
   managedClusterGroups:
   - name: region-one
