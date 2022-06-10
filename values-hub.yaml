@@ -20,7 +20,6 @@ clusterGroup:
   - hub
   - config-demo
   - golang-external-secrets
-  - lso
 
   applications:
   - name: acm
