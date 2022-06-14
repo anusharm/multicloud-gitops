@@ -24,6 +24,6 @@ spec:
             storage: "1"
         storageClassName: localblock
         volumeMode: Block
-  name: ocs-deviceset-lso-volumeset
-  replica: 3
-version: 4.10.0
+    name: ocs-deviceset-lso-volumeset
+    replica: 3
+  version: 4.10.0
