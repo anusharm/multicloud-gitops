@@ -21,6 +21,7 @@ clusterGroup:
   - config-demo
   - golang-external-secrets
   - lso
+  - odf
 
   applications:
   - name: acm
@@ -73,6 +74,11 @@ clusterGroup:
     namespace: openshift-local-storage
     project: lso
     path: charts/all/lso
+  
+  - name: odf
+    namespace: openshift-storage
+    project: odf
+    path: charts/all/odf
 
   managedClusterGroups:
   - name: region-one
