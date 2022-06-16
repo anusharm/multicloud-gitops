@@ -4,26 +4,44 @@ metadata:
   annotations:
     uninstall.ocs.openshift.io/cleanup-policy: delete
     uninstall.ocs.openshift.io/mode: graceful
+    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
   finalizers:
   - storagecluster.ocs.openshift.io
   name: ocs-storagecluster
   namespace: openshift-storage
-  annotations:
-    argocd.argoproj.io/sync-wave: "3"
-    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
 spec:
-  monDataDirHostPath: /var/lib/rook
+  arbiter: {}
+  encryption:
+    kms: {}
+  externalStorage: {}
+  managedResources:
+    cephBlockPools: {}
+    cephCluster: {}
+    cephConfig: {}
+    cephDashboard: {}
+    cephFilesystems: {}
+    cephObjectStoreUsers: {}
+    cephObjectStores: {}
+  mirroring: {}
+  nodeTopologies: {}
   storageDeviceSets:
-  - count: 1
+  - config: {}
+    count: 1
     dataPVCTemplate:
+      metadata: {}
       spec:
         accessModes:
         - ReadWriteOnce
         resources:
           requests:
-            storage: "1"
-        storageClassName: localblock
+            storage: 512Gi
+        storageClassName: gp2
         volumeMode: Block
-    name: ocs-deviceset-lso-volumeset
+    name: ocs-deviceset-gp2
+    placement: {}
+    portable: true
+    preparePlacement: {}
     replica: 3
-  version: 4.10.0
+    resources: {}
+    version: 4.10.0
