@@ -32,7 +32,7 @@ metadata:
 subjects:
   - kind: ServiceAccount
     name: label-storage-nodes
-    namespace: openshift-local-storage
+    namespace: openshift-storage
 roleRef:
   apiGroup: rbac.authorization.k8s.io
   kind: ClusterRole
