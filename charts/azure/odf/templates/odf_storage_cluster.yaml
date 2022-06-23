@@ -1,0 +1,66 @@
+apiVersion: ocs.openshift.io/v1
+kind: StorageCluster
+metadata:
+  annotations:
+    uninstall.ocs.openshift.io/cleanup-policy: delete
+    uninstall.ocs.openshift.io/mode: graceful
+  finalizers:
+  - storagecluster.ocs.openshift.io
+  name: ocs-storagecluster
+  namespace: openshift-storage
+spec:
+  arbiter: {}
+  encryption:
+    kms: {}
+  externalStorage: {}
+  managedResources:
+    cephBlockPools: {}
+    cephCluster: {}
+    cephConfig: {}
+    cephDashboard: {}
+    cephFilesystems: {}
+    cephObjectStoreUsers: {}
+    cephObjectStores: {}
+  mirroring: {}
+  nodeTopologies: {}
+  resources:
+    mds:
+      limits:
+        cpu: "3"
+        memory: 8Gi
+      requests:
+        cpu: "1"
+        memory: 8Gi
+    rgw:
+      limits:
+        cpu: "2"
+        memory: 4Gi
+      requests:
+        cpu: "1"
+        memory: 4Gi
+  storageDeviceSets:
+  - config: {}
+    count: 1
+    dataPVCTemplate:
+      metadata: {}
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 512Gi
+        storageClassName: managed-premium
+        volumeMode: Block
+    name: ocs-deviceset-managed-premium
+    placement: {}
+    portable: true
+    preparePlacement: {}
+    replica: 3
+    resources:
+      limits:
+        cpu: "2"
+        memory: 5Gi
+      requests:
+        cpu: "1"
+        memory: 5Gi
+  version: 4.10.0

@@ -88,6 +88,13 @@ clusterGroup:
     clusterSelector:
       matchLabels:
         clusterGroup: region-one
+  - name: azure
+    helmOverrides:
+    - name: clusterGroup.isHubCluster
+      value: false
+    clusterSelector:
+      matchLabels:
+        clusterGroup: azure
 
 #  To have apps in multiple flavors, use namespaces and use helm overrides as appropriate
 #
