@@ -1,269 +1,47 @@
-apiVersion: v1
-items:
-- apiVersion: ocs.openshift.io/v1
-  kind: StorageCluster
-  metadata:
-    annotations:
-      storagesystem.odf.openshift.io/watched-by: ocs-storagecluster-storagesystem
-      uninstall.ocs.openshift.io/cleanup-policy: delete
-      uninstall.ocs.openshift.io/mode: graceful
-    creationTimestamp: "2022-06-27T15:37:29Z"
-    finalizers:
-    - storagecluster.ocs.openshift.io
-    generation: 5
-    managedFields:
-    - apiVersion: ocs.openshift.io/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:spec:
-          .: {}
-          f:arbiter: {}
-          f:encryption:
-            .: {}
-            f:kms: {}
-          f:nodeTopologies: {}
-          f:resources:
-            .: {}
-            f:mds:
-              .: {}
-              f:limits:
-                .: {}
-                f:cpu: {}
-                f:memory: {}
-              f:requests:
-                .: {}
-                f:cpu: {}
-                f:memory: {}
-            f:rgw:
-              .: {}
-              f:limits:
-                .: {}
-                f:cpu: {}
-                f:memory: {}
-              f:requests:
-                .: {}
-                f:cpu: {}
-                f:memory: {}
-      manager: Mozilla
-      operation: Update
-      time: "2022-06-27T15:37:29Z"
-    - apiVersion: ocs.openshift.io/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:annotations:
-            .: {}
-            f:storagesystem.odf.openshift.io/watched-by: {}
-          f:ownerReferences:
-            .: {}
-            k:{"uid":"8fa42cd1-87a5-4279-91cc-cfdb47586986"}: {}
-      manager: manager
-      operation: Update
-      time: "2022-06-27T15:37:29Z"
-    - apiVersion: ocs.openshift.io/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:metadata:
-          f:annotations:
-            f:uninstall.ocs.openshift.io/cleanup-policy: {}
-            f:uninstall.ocs.openshift.io/mode: {}
-          f:finalizers:
-            .: {}
-            v:"storagecluster.ocs.openshift.io": {}
-        f:spec:
-          f:externalStorage: {}
-          f:managedResources:
-            .: {}
-            f:cephBlockPools: {}
-            f:cephConfig: {}
-            f:cephDashboard: {}
-            f:cephFilesystems: {}
-            f:cephObjectStoreUsers: {}
-            f:cephObjectStores: {}
-          f:mirroring: {}
-          f:storageDeviceSets: {}
-          f:version: {}
-      manager: ocs-operator
-      operation: Update
-      time: "2022-06-27T15:37:29Z"
-    - apiVersion: ocs.openshift.io/v1
-      fieldsType: FieldsV1
-      fieldsV1:
-        f:status:
-          .: {}
-          f:conditions: {}
-          f:failureDomain: {}
-          f:failureDomainKey: {}
-          f:failureDomainValues: {}
-          f:images:
-            .: {}
-            f:ceph:
-              .: {}
-              f:actualImage: {}
-              f:desiredImage: {}
-            f:noobaaCore:
-              .: {}
-              f:actualImage: {}
-              f:desiredImage: {}
-            f:noobaaDB:
-              .: {}
-              f:actualImage: {}
-              f:desiredImage: {}
-          f:nodeTopologies:
-            .: {}
-            f:labels:
-              .: {}
-              f:kubernetes.io/hostname: {}
-              f:topology.kubernetes.io/region: {}
-              f:topology.kubernetes.io/zone: {}
-          f:phase: {}
-          f:relatedObjects: {}
-      manager: ocs-operator
-      operation: Update
-      subresource: status
-      time: "2022-06-27T15:41:04Z"
-    name: ocs-storagecluster
-    namespace: openshift-storage
-    ownerReferences:
-    - apiVersion: odf.openshift.io/v1alpha1
-      blockOwnerDeletion: true
-      controller: true
-      kind: StorageSystem
-      name: ocs-storagecluster-storagesystem
-      uid: 8fa42cd1-87a5-4279-91cc-cfdb47586986
-    resourceVersion: "51573"
-    uid: 93b7c5a1-d1df-47b2-807b-6744eb2ae090
-  spec:
-    arbiter: {}
-    encryption:
-      kms: {}
-    externalStorage: {}
-    managedResources:
-      cephBlockPools: {}
-      cephConfig: {}
-      cephDashboard: {}
-      cephFilesystems: {}
-      cephObjectStoreUsers: {}
-      cephObjectStores: {}
-    mirroring: {}
-    nodeTopologies: {}
-    resources:
-      mds:
-        limits:
-          cpu: "3"
-          memory: 8Gi
-        requests:
-          cpu: "1"
-          memory: 8Gi
-      rgw:
-        limits:
-          cpu: "2"
-          memory: 4Gi
-        requests:
-          cpu: "1"
-          memory: 4Gi
-    storageDeviceSets:
-    - config: {}
-      count: 1
-      dataPVCTemplate:
-        metadata: {}
-        spec:
-          accessModes:
-          - ReadWriteOnce
-          resources:
-            requests:
-              storage: 512Gi
-          storageClassName: standard
-          volumeMode: Block
-        status: {}
-      name: ocs-deviceset-standard
-      placement: {}
-      portable: true
-      preparePlacement: {}
-      replica: 3
-      resources:
-        limits:
-          cpu: "2"
-          memory: 5Gi
-        requests:
-          cpu: "1"
-          memory: 5Gi
-    version: 4.9.0
-  status:
-    conditions:
-    - lastHeartbeatTime: "2022-06-27T15:56:47Z"
-      lastTransitionTime: "2022-06-27T15:41:04Z"
-      message: Reconcile completed successfully
-      reason: ReconcileCompleted
-      status: "True"
-      type: ReconcileComplete
-    - lastHeartbeatTime: "2022-06-27T15:37:30Z"
-      lastTransitionTime: "2022-06-27T15:37:30Z"
-      message: Initializing StorageCluster
-      reason: Init
-      status: "False"
-      type: Available
-    - lastHeartbeatTime: "2022-06-27T15:56:47Z"
-      lastTransitionTime: "2022-06-27T15:37:30Z"
-      message: Waiting on Nooba instance to finish initialization
-      reason: NoobaaInitializing
-      status: "True"
-      type: Progressing
-    - lastHeartbeatTime: "2022-06-27T15:37:30Z"
-      lastTransitionTime: "2022-06-27T15:37:30Z"
-      message: Initializing StorageCluster
-      reason: Init
-      status: "False"
-      type: Degraded
-    - lastHeartbeatTime: "2022-06-27T15:37:30Z"
-      lastTransitionTime: "2022-06-27T15:37:30Z"
-      message: Initializing StorageCluster
-      reason: Init
-      status: Unknown
-      type: Upgradeable
-    failureDomain: zone
-    failureDomainKey: topology.kubernetes.io/zone
-    failureDomainValues:
-    - us-east4-a
-    - us-east4-b
-    - us-east4-c
-    images:
-      ceph:
-        actualImage: registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:2296c19fbd3a0be84d6030dff789ce3e79b38cc30c39f45913aec97967b65cce
-        desiredImage: registry.redhat.io/rhceph/rhceph-5-rhel8@sha256:2296c19fbd3a0be84d6030dff789ce3e79b38cc30c39f45913aec97967b65cce
-      noobaaCore:
-        actualImage: registry.redhat.io/odf4/mcg-core-rhel8@sha256:a70a4d01a4f61d429b026f0df7020ec576c2f40bc4483a8cc77843cf1be92912
-        desiredImage: registry.redhat.io/odf4/mcg-core-rhel8@sha256:a70a4d01a4f61d429b026f0df7020ec576c2f40bc4483a8cc77843cf1be92912
-      noobaaDB:
-        actualImage: registry.redhat.io/rhel8/postgresql-12@sha256:44215c5b244b190c82d9d371a8ffd39b0c83576bd85c980cc72782a5cf9e6e1b
-        desiredImage: registry.redhat.io/rhel8/postgresql-12@sha256:44215c5b244b190c82d9d371a8ffd39b0c83576bd85c980cc72782a5cf9e6e1b
-    nodeTopologies:
-      labels:
-        kubernetes.io/hostname:
-        - cluster-5ca2-cv68l-worker-a-kpz2k.c.rhpds-345620.internal
-        - cluster-5ca2-cv68l-worker-b-sn2fs.c.rhpds-345620.internal
-        - cluster-5ca2-cv68l-worker-c-246d8.c.rhpds-345620.internal
-        topology.kubernetes.io/region:
-        - us-east4
-        topology.kubernetes.io/zone:
-        - us-east4-a
-        - us-east4-b
-        - us-east4-c
-    phase: Progressing
-    relatedObjects:
-    - apiVersion: ceph.rook.io/v1
-      kind: CephCluster
-      name: ocs-storagecluster-cephcluster
-      namespace: openshift-storage
-      resourceVersion: "51315"
-      uid: 0baaf0dc-f489-419c-bd4b-c5b752658254
-    - apiVersion: noobaa.io/v1alpha1
-      kind: NooBaa
-      name: noobaa
-      namespace: openshift-storage
-      resourceVersion: "51572"
-      uid: f1c87b21-daba-450a-81e9-16af6c4f1333
-kind: List
+apiVersion: ocs.openshift.io/v1
+kind: StorageCluster
 metadata:
-  resourceVersion: ""
-  selfLink: ""
+  annotations:
+    uninstall.ocs.openshift.io/cleanup-policy: delete
+    uninstall.ocs.openshift.io/mode: graceful
+    argocd.argoproj.io/sync-wave: "3"
+    argocd.argoproj.io/sync-options: SkipDryRunOnMissingResource=true
+  finalizers:
+  - storagecluster.ocs.openshift.io
+  name: ocs-storagecluster
+  namespace: openshift-storage
+spec:
+  arbiter: {}
+  encryption:
+    kms: {}
+  externalStorage: {}
+  managedResources:
+    cephBlockPools: {}
+    cephCluster: {}
+    cephConfig: {}
+    cephDashboard: {}
+    cephFilesystems: {}
+    cephObjectStoreUsers: {}
+    cephObjectStores: {}
+  mirroring: {}
+  nodeTopologies: {}
+  storageDeviceSets:
+  - config: {}
+    count: 1
+    dataPVCTemplate:
+      metadata: {}
+      spec:
+        accessModes:
+        - ReadWriteOnce
+        resources:
+          requests:
+            storage: 512Gi
+        storageClassName: standard
+        volumeMode: Block
+    name: ocs-deviceset-managed-premium
+    placement: {}
+    portable: true
+    preparePlacement: {}
+    replica: 3
+    resources: {}
+  version: 4.10.0
