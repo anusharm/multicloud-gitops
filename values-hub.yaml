@@ -70,15 +70,10 @@ clusterGroup:
     project: config-demo
     path: charts/all/config-demo
   
-  - name: lso
-    namespace: openshift-local-storage
-    project: lso
-    path: charts/all/lso
-  
   - name: odf
     namespace: openshift-storage
     project: odf
-    path: charts/all/odf
+    path: charts/hub/odf
 
   managedClusterGroups:
   - name: region-one
