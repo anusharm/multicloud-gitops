@@ -26,3 +26,4 @@ spec:
               fi
         image: registry.redhat.io/openshift4/ose-cli:v4.7
       restartPolicy: Never
+      serviceAccount: label-storage-nodes
