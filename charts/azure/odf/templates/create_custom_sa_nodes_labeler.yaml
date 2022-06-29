@@ -17,6 +17,16 @@ rules:
       - ""
     resources:
       - nodes
+      - consoles
+    verbs:
+      - get
+      - list
+      - patch
+      - update
+  - apiGroups:
+      - "operator.openshift.io"
+    resources:
+      - consoles
     verbs:
       - get
       - list
