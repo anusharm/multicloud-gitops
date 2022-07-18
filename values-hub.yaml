@@ -23,6 +23,7 @@ clusterGroup:
   - golang-external-secrets
   - lso
   - odf
+  - image-tool
 
   applications:
   - name: acm
