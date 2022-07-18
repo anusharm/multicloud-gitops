@@ -9,6 +9,7 @@ clusterGroup:
   - config-demo
   - openshift-storage
   - openshift-local-storage
+  - image-tool
 
   subscriptions:
   - name: advanced-cluster-management
@@ -70,6 +71,11 @@ clusterGroup:
     project: config-demo
     path: charts/all/config-demo
   
+  - name: image-tool
+    namespace: image-tool
+    project: image-tool
+    path: charts/all/image-tool
+
   - name: odf
     namespace: openshift-storage
     project: odf

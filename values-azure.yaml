@@ -10,6 +10,7 @@ clusterGroup:
 
   namespaces:
     - openshift-storage
+    - image-tool
 
   subscriptions:
 
@@ -21,3 +22,8 @@ clusterGroup:
     namespace: openshift-storage
     project: odf
     path: charts/azure/odf
+
+  - name: image-tool
+    namespace: image-tool
+    project: image-tool
+    path: charts/all/image-tool
