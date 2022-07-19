@@ -16,6 +16,7 @@ clusterGroup:
 
   projects:
     - odf
+    - image-tool
 
   applications:
   - name: odf
