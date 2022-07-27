@@ -24,24 +24,7 @@ spec:
     cephObjectStoreUsers: {}
     cephObjectStores: {}
   mirroring: {}
-  nodeTopologies: {}
-  storageDeviceSets:
-  - config: {}
-    count: 1
-    dataPVCTemplate:
-      metadata: {}
-      spec:
-        accessModes:
-        - ReadWriteOnce
-        resources:
-          requests:
-            storage: 512Gi
-        storageClassName: gp2
-        volumeMode: Block
-    name: ocs-deviceset-gp2
-    placement: {}
-    portable: true
-    preparePlacement: {}
-    replica: 3
-    resources: {}
+  multiCloudGateway:
+    dbStorageClassName: gp2
+    reconcileStrategy: standalone
   version: 4.10.0
