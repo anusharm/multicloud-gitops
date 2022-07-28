@@ -15,6 +15,7 @@ spec:
         - /bin/bash
         - -c
         - |
+          sleep 180
           # wait for the Storage Cluster to be available
           oc wait storagecluster ocs-storagecluster --for=condition=Available=true
         name: wait-for-storage-cluster
