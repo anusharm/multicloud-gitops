@@ -10,12 +10,17 @@ clusterGroup:
   - openshift-storage
   - openshift-local-storage
   - image-tool
+  - quay-enterprise
 
   subscriptions:
   - name: advanced-cluster-management
     namespace: open-cluster-management
     channel: release-2.4
     csv: advanced-cluster-management.v2.4.1
+  - name: quay-operator
+    namespace: openshift-operators
+    channel: stable-3.6
+    csv: quay-operator.v3.6.6
 
   projects:
   - hub
@@ -24,6 +29,7 @@ clusterGroup:
   - lso
   - odf
   - image-tool
+  - quay-enterprise
 
   applications:
   - name: acm
@@ -81,6 +87,11 @@ clusterGroup:
     namespace: openshift-storage
     project: odf
     path: charts/hub/odf
+  
+  - name: quay
+    namespace: quay-enterprise
+    project: quay-enterprise
+    path: charts/hub/quay
 
   managedClusterGroups:
   - name: region-one
