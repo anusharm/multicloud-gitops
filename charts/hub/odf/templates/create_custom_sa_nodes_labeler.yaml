@@ -18,11 +18,13 @@ rules:
     resources:
       - nodes
       - consoles
+      - storagecluster
     verbs:
       - get
       - list
       - patch
       - update
+      - watch
   - apiGroups:
       - "operator.openshift.io"
     resources:
