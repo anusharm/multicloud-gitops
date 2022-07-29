@@ -15,6 +15,7 @@ metadata:
 rules:
   - apiGroups:
       - ""
+      - "ocs.openshift.io"
     resources:
       - nodes
       - consoles
