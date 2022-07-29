@@ -4,7 +4,7 @@ metadata:
   name: enable-quay-api
   namespace: quay-enterprise
   annotations:
-    argocd.argoproj.io/sync-wave: "8"
+    argocd.argoproj.io/sync-wave: "9"
 spec:
   template:
     spec:
