@@ -17,7 +17,7 @@ spec:
         - |
           sleep 180
           # wait for the Storage Cluster to be available
-          oc wait storagecluster ocs-storagecluster --for=condition=Available=true
+          oc wait storagecluster ocs-storagecluster --for=condition=Available=true -n openshift-storage
         name: wait-for-storage-cluster
       dnsPolicy: ClusterFirst
       activeDeadlineSeconds: 1500
