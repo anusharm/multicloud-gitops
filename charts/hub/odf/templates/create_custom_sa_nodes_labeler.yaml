@@ -19,7 +19,7 @@ rules:
     resources:
       - nodes
       - consoles
-      - storagecluster
+      - storageclusters
     verbs:
       - get
       - list
