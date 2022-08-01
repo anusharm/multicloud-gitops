@@ -3,7 +3,7 @@ kind: Job
 metadata:
   annotations:
     argocd.argoproj.io/hook: Sync
-    argocd.argoproj.io/sync-wave: "6"
+    argocd.argoproj.io/sync-wave: "2"
   name: wait-for-storage-cluster
   namespace: openshift-storage
 spec:
