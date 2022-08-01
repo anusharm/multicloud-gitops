@@ -14,6 +14,7 @@ spec:
         - /bin/bash
         - -c
         - |
+          sleep 300 && \
           # Invoke API and add quay user to the API - initiates API
           JSONTOKEN=$(curl -X POST -k  https://quay-registry-quay-quay-enterprise.apps.ocp410.datamulticloud.com/api/v1/user/initialize --header 'Content-Type: application/json' --data '{ "username": "quayadmin", "password":"quayadmin123", "email": "quayadmin@example.com", "access_token": true}') && \
           oc create secret generic quay-temp-token --from-literal=token=$JSONTOKEN -n quay-enterprise
