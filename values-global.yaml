@@ -6,11 +6,13 @@ global:
     useCSV: false
     syncPolicy: Automatic
     installPlanApproval: Automatic
+  
+  quay:
+    username: quayadmin
+    password: quayadmin123
+    email: gmidha@redhat.com
 
 main:
   clusterGroupName: hub
 
-quay:
-  username: quayadmin
-  password: quayadmin123
-  email: gmidha@redhat.com
+
