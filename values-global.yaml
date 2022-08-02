@@ -9,3 +9,8 @@ global:
 
 main:
   clusterGroupName: hub
+
+quay:
+  username: quayadmin
+  password: quayadmin123
+  email: gmidha@redhat.com
